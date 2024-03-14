@@ -1,8 +1,8 @@
 const express = require('express')
-
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-const connection = mongoose.connect('mongodb+srv://kumarastik0398:astik@cluster0.lcxjcaq.mongodb.net/todo-app?retryWrites=true&w=majority')
+const connection = mongoose.connect(process.env.mongoURL)
 
 module.exports = {
     connection

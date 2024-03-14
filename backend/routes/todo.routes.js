@@ -24,6 +24,26 @@ todoRouter.get('/', async(req, res)=> {
     }
 })
 
+todoRouter.delete('/:_id', async(req, res)=> {
+    const {_id} = req.params
+    try {
+        await todoModel.findByIdAndDelete({_id})
+        res.status(201).send({"message": "todo deleted successfully"})
+    } catch (error) {
+        res.send({"error": error})
+    }
+})
+
+todoRouter.patch('/:_id', async(req, res)=> {
+    const {_id} = req.params
+    try {
+        await todoModel.findByIdAndUpdate({_id}, req.body)
+        res.status(201).send({"message": "todo updated successfully"})
+    } catch (error) {
+        res.send({"error": error})
+    }
+})
+
 module.exports = {
     todoRouter
 }
