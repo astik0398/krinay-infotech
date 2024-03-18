@@ -17,7 +17,9 @@ const Inputform = () => {
     }
     dispatch(addTodo(obj))
     
-    window.location.reload()
+    setTimeout(()=> {
+      window.location.reload()
+    }, 800)
   }
 
   return (

@@ -29,3 +29,19 @@ export const addTodo = (obj)=> (dispatch)=> {
         dispatch({type: POST_TODO_FAILURE})
     })
 }
+
+export const deleteTodo = (id)=> (dispatch)=> {
+    
+    axios.delete(`https://krinay-infotech-backend.onrender.com/${id}`)
+    .then(function(res){
+        console.log(res);
+    })
+}
+
+export const editTodo = (obj)=> (dispatch)=> {
+    console.log(obj);
+    axios.patch(`https://krinay-infotech-backend.onrender.com/${obj.id}`, obj)
+    .then(function(res){
+        console.log(res);
+    })
+}
