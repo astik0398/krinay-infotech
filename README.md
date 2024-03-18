@@ -23,6 +23,10 @@ npm install
 
 npm start
 
+## Screenshots
+
+![alt text](<scrnli_3_18_2024_12-24-54 PM.png>)
+
 ## Usage
 
 1. To add a new todo, type in the input field and press Enter.
